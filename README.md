@@ -10,8 +10,8 @@
  
  
  开发难点：
- （1）版块顺序拖拽部分代码，实现实时拖拽排序，多版块顺序更新。封装拖拽排序方法，实现多能调用。
- ![图片](https://github.com/Jia-feng/edit-h5/blob/master/layout/img/jzrs3-h5y0e.gif?raw=true)
- （2）文本输入版块使用最新的MediumEditor富文本编辑器，轻便简便，实现选中编辑文字。
+ （1）版块顺序拖拽部分代码，实现实时拖拽排序，多版块顺序更新。封装拖拽排序方法，实现多能调用。<br>
+ ![图片](https://github.com/Jia-feng/edit-h5/blob/master/layout/img/jzrs3-h5y0e.gif?raw=true)<br>
+ （2）文本输入版块使用最新的MediumEditor富文本编辑器，轻便简便，实现选中编辑文字。<br>
   ![图片](https://github.com/Jia-feng/edit-h5/blob/master/layout/img/nwxlc-v6qyv.gif?raw=true)
   
