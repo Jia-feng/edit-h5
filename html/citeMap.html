@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>搜到地图</title>
+   <link rel="stylesheet" href="/layout/css/reset.css">
+   <script type="text/javascript" src="/layout/js/jquery.min.js"></script>
+   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	EI8C25NkOoMBpgAIQwcWgk6rILmeSq2G"></script>
+   <style>
+      body{
+         width: 100vw;
+         height: 100vh;
+      }
+      #allmap{
+         width: 100%;
+         height: 100%;
+      }
+   </style>
+</head>
+<body>
+   <div id="allmap"></div>
+   <input type="text" name="address" id="suggestId" hidden>
+   <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+   <button type="button" hidden>添加</button>
+   <script>
+     /* var addressThis = '北京华业国际中心B座';
+      function baiduAdd(ad){
+         // 百度地图API功能
+         var map = new BMap.Map("allmap");
+         var point = new BMap.Point(116.331398,39.897445);
+         map.centerAndZoom(point,12);
+         map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+         map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+         var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+            {"input" : "suggestId"
+             ,"location" : map
+            });
+         // 创建地址解析器实例
+         var myGeo = new BMap.Geocoder();
+         // 将地址解析结果显示在地图上,并调整地图视野
+         myGeo.getPoint(ad, function(point){
+            if (point) {
+               map.centerAndZoom(point, 16);
+               map.addOverlay(new BMap.Marker(point));
+            }else{
+               alert("您选择地址没有解析到结果!");
+            }
+         }, "北京市");
+      }
+      baiduAdd(addressThis);
+      $(function(){
+         $("button").click(function(){
+            var texts = $("input[name=address]").val();
+            if(texts != ''){
+               baiduAdd(texts);
+            }else{
+               baiduAdd(addressThis);
+            }
+         })
+      })*/
+      function getUrlParam(name) {
+         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+         var l =decodeURI(window.location.search.substr(1));
+         var r = l.match(reg); //匹配目标参数
+         if (r != null) return unescape(r[2]); return null; //返回参数值
+      }
+      var ad = getUrlParam('seachTitle');
+      var map = new BMap.Map("allmap");
+      var point = new BMap.Point(116.331398,39.897445);
+      map.centerAndZoom(point,12);
+      map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+      map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+      var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+         {"input" : "suggestId"
+          ,"location" : map
+         });
+      // 创建地址解析器实例
+      var myGeo = new BMap.Geocoder();
+      // 将地址解析结果显示在地图上,并调整地图视野
+      myGeo.getPoint(ad, function(point){
+         if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+         }else{
+            alert("您选择地址没有解析到结果!");
+         }
+      }, "北京市");
+   </script>
+</body>
+</html>

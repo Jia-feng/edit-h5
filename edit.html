@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
+  <title>搜到编辑器</title>
+  <link rel="stylesheet" href="layout/css/reset.css">
+  <link rel="stylesheet" href="layout/css/bootstrap.min.css">
+  <link rel="stylesheet" href="layout/css/jquery-ui.css">
+  <link rel="stylesheet" href="layout/js/layui/css/layui.css">
+  <link rel="stylesheet" href="layout/js/tip/just-tip.css">
+  <link rel="stylesheet" href="layout/css/dropzone.css">
+  <link rel="stylesheet" href="layout/js/swiper/swiper.min.css">
+  <link rel="stylesheet" href="layout/js/medium-editor/css/font-awesome.min.css">
+  <link rel="stylesheet" href="layout/js/medium-editor/css/custom.min.css">
+  <link rel="stylesheet" href="layout/js/medium-editor/medium-editor.css">
+  <link rel="stylesheet" href="layout/css/souEdit-1.0.css">
+  <link rel="stylesheet" href="layout/css/common.css">
+  <link rel="stylesheet" href="layout/css/theme.css">
+  <link rel="stylesheet" href="http://static.isoudao.com/html5edit/css/introjs.min.css">
+  <link rel="stylesheet" href="layout/css/yun.css">
+  <!--引导-->
+  <script type="text/javascript" src="layout/js/jquery.min.js"></script>
+  <script type="text/javascript" src="layout/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="layout/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="layout/js/medium-editor/medium-editor.js"></script>
+  <script type="text/javascript" src="layout/js/medium-editor/medium-extendsion.js"></script>
+  <script type="text/javascript" src="layout/js/medium-editor/vanilla-color-picker.min.js"></script>
+  <!--富文本编辑器支持插件-->
+  <script type="text/javascript" src="layout/js/layui/layui.all.js"></script>
+  <!--弹框支持插件-->
+  <script type="text/javascript" src="layout/js/tip/justTools.js"></script>
+  <!--提示浮动框支持插件-->
+  <script type="text/javascript" src="layout/js/dropzone.js"></script>
+  <!--上传支持插件-->
+  <script type="text/javascript" src="layout/js/editData.js"></script>
+  <script type="text/javascript" src="layout/js/theme.js"></script>
+  <!--主题-->
+  <script type="text/javascript" src="layout/js/Sortable.js"></script>
+  <!--拖拽支持插件-->
+  <script type="text/javascript" src="layout/js/yi-scroll.js"></script>
+  <!--滚动条样式-->
+  <script type="text/javascript" src="layout/js/jquery.qrcode.min.js"></script>
+  <!--二维码生成-->
+  <script type="text/javascript" src="layout/js/swiper/swiper.min.js"></script>
+  <!--移动轮播图-->
+  <script type="text/javascript" src="layout/js/jquery.scroll.floor.js"></script>
+  <!--页面滚动-->
+  <script src="http://static.isoudao.com/html5edit/js/intro.min.js" type="text/javascript"></script>
+  <!--引导-->
+  <!--美图秀秀Api-->
+  <script src="http://open.web.meitu.com/sources/xiuxiu.js" type="text/javascript"></script>
+  <!--百度地图link-->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=	EI8C25NkOoMBpgAIQwcWgk6rILmeSq2G"></script>
+  <script type="text/javascript" src="http://static.isoudao.com/html5edit/libs/store.js"></script>
+
+</head>
+
+<body>
+  <div class="sou_editbox" id="sou_edit">
+    <!--左侧编辑器导航内容-->
+    <div class="sou_eidt_navleft" style="z-index: 99!important">
+      <!--左导航条-->
+      <div class="sou_navBox">
+        <!--打开编辑面板-->
+        <div class="sou_showNav sou_iconfont demoRight" sou_alt="显示编辑面板">
+          &#xe639;
+        </div>
+        <!--操作按钮-->
+        <div class="sou_navbar">
+          <div class="popover-info">
+            <a href="javascript:;" class="sou_iconfont close_navBox demoRight" sou_alt="隐藏编辑面板">&#xe66a;</a>
+          </div>
+          <a class="brand" href="/" target="_blank"><img src="http://static.isoudao.com/easyh5/layout/images/easyh5_03.png"></a>
+          <div class="sou_collapse">
+            <div class="pageOnthis">
+              <select name="onPage" id="onPage">
+                <option value="1">首页</option>
+                <option value="2">列表页</option>
+                <option value="3">内容页</option>
+              </select>
+            </div>
+            <a href="/yulan.html" target="yulan" class="demoRight toPreview" sou_alt="查看在不同设备上的呈现效果"><i class="sou_iconfont">&#xe65d;</i>预览</a>
+            <a href="javascript:;" class="demoRight storeThis" sou_alt="保存"><i class="sou_iconfont">&#xe684;</i>保存</a>
+            <a href="javascript:showTheme();" class="demoRight themeBtn" sou_alt="更换主题样式，体验不同色彩的网站"><i class="sou_iconfont">&#xe68f;</i>主题</a>
+            <a href="javascript:;" class="demoRight sampleBtn" sou_alt="更多网站模板点击更换"><i class="sou_iconfont">&#xe6e9;</i>模板</a>
+          </div>
+        </div>
+        <div class="sidebar-nav" id="sidebar-nav">
+          <!--添加版块-->
+          <div class="sou_templet demoRight sou_iconfont show_bankuai" sou_alt="版块盒子">
+            &#xe66c; 版块盒子
+            <ul>
+              <li class="demoRight" sou_alt="头部组件" zjid="30001">头部组件</li>
+              <li class="demoRight" sou_alt="底部组件" zjid="30002">底部组件</li>
+              <li class="demoRight" sou_alt="文章列表" zjid="30010">文章列表</li>
+              <li class="demoRight" sou_alt="分页列表页" zjid="30011">分页列表页</li>
+              <li class="demoRight" sou_alt="文章内容页" zjid="30012">文章内容页</li>
+              <li class="demoRight" sou_alt="轮播图" zjid="30020">轮播图</li>
+              <li class="demoRight" sou_alt="列表展示" zjid="30021">列表展示</li>
+              <li class="demoRight" sou_alt="banner" zjid="30022">banner</li>
+              <li class="demoRight" sou_alt="图片组件" zjid="30023">图片组件</li>
+              <li class="demoRight" sou_alt="内容展示" zjid="30024">内容展示</li>
+              <li class="demoRight" sou_alt="联系我们" zjid="30025">联系我们</li>
+              <li class="demoRight" sou_alt="留言表单" zjid="30026">留言表单</li>
+              <li class="demoRight" sou_alt="其他" zjid="30000">其他</li>
+            </ul>
+          </div>
+          <!--页面导航版块-->
+          <section class="sou_edit_nav ">
+            <h3>页面版块<span class="sou_iconfont demoRight  reform" sou_alt="重做">&#xe6d2;</span><span class="sou_iconfont demoLeft cancel" sou_alt="撤销">&#xe663;</span></h3>
+            <ul class="drag-list" id="drag-list">
+              <!--              <li>
+      <span class="nav_area sou_iconfont demoRight" sou_alt="拖拽更改顺序">&#xe60a;</span>
+      <span class="title">模块名称</span>
+      <span class="sou_iconfont sou_navSet demoRight change_bkset" sou_alt="点击打开当前模块设置">&#xe631;</span>
+      </li>-->
+            </ul>
+          </section>
+
+        </div>
+        <!--登录按钮-->
+        <!--     <div class="sou_keep_loading">
+          <div>
+            <img src="layout/img/shuaxin.png" alt=""> 正在保存......
+          </div>
+          <div>
+            保存失败
+          </div>
+          <div>
+            已保存 <span onclick="storeUp()">立即保存</span>
+          </div>
+        </div>
+-->
+      </div>
+      <!-- 版块盒子-->
+      <div class="sou_templetBox ">
+        <h3>添加新版块 <span class="sou_iconfont close_bankuai">&#xe6d3;</span></h3>
+        <div class="templetBox_topNav">
+          <span class="sou_checked">公共版块</span>
+          <span>我的版块</span>
+        </div>
+        <div class="templetBox_list">
+          <ul class="modulebox">
+          </ul>
+          <ul class="userModulebox" style="display: none">
+            <p>暂无个人版块</p>
+          </ul>
+        </div>
+      </div>
+      <!--版块盒子 END -->
+    </div>
+    <!--主体编辑内容-->
+    <div class="sou_htmlbox" id="sou_htmlbox">
+      <!--导航条-->
+      <div class='header_nav' istype='30001'>
+        <div class='navbar1'>
+          <div class='nav_container'>
+            <span class='sou_iconfont navbtn'>&#xe692;</span>
+            <div class='logoImg onImg_edit'><img src='https://static.angwei.net/aiweb/editor/v1.0/layout/img/yun/logo.png' alt=''></div>
+            <div class='linkList'>
+              <ul class='onNav_edit'>
+                <li>测试导航</li>
+              </ul>
+            </div>
+            <div class='m_linkList'>
+              <a href='javascript:;' class='sou_iconfont'>&#xe6d3;</a>
+              <ul class='onNav_edit'>
+                <li>测试导航</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class='sou_footer'> </div>
+
+    </div>
+    <!--自定义组件 模块库-->
+    <div class="defined_store" style="display: none;">
+      <div class='sou_list_row'>
+        <h1 class='ontext_edit'>自己设计需要的版块吧</h1>
+      </div>
+      <div class='sou_list_row'>
+        <h5 class='ontext_edit'>在此处添加文本段落</h5>
+      </div>
+      <div class='sou_list_row'>
+        <div class="sort_link onBtn_edit">
+          <a href='javascript:;' target="_blank">添加链接</a>
+        </div>
+      </div>
+      <div class='sou_list_row'>
+        <div class='onImg_edit'>
+          <img src='http://static.isoudao.com/upload/userFodder/197120099032807304/2017/12/242999924359419619.jpg' alt=''>
+        </div>
+      </div>
+      <div class='sou_list_row'>
+        <div class='sou_address_map onvideo_edit'>
+          <div class='sou_vadiobox'>
+            <iframe frameborder='0' width='640' height='498' src='https://v.qq.com/iframe/player.html?vid=p05049whpca&tiny=0&auto=0' allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class='sou_list_row'>
+        <div class='small_form'>
+          <input type='text' name='name' placeholder='姓名'>
+          <input type='text' name='email' placeholder='邮箱'>
+          <button type='button'>提交</button>
+        </div>
+      </div>
+      <div class='sou_list_row'>
+        <div class='big_form'>
+          <input type='text' name='name' placeholder='姓名'>
+          <input type='text' name='email' placeholder='邮箱'>
+          <textarea name='messageAll' cols='30' rows='5' placeholder='留言'></textarea>
+          <button type='button'>提交</button>
+        </div>
+      </div>
+      <div class='sou_list_row twList'>
+        <div class='thumbnail'>
+          <div class='onImg_edit'><img src='http://static.isoudao.com/html5single/layout/img/xx_98.jpg' alt=''></div>
+          <div class='caption'>
+            <div>
+              <h3 class='ontext_edit'>标题文本</h3>
+              <h5 class='ontext_edit'>一行小标语</h5><span class='ontext_edit'>一行简单的描述文字。夏天的飞鸟，飞到我的窗前唱歌，又飞去了。秋天的黄叶，它们没有什么可唱，只叹息一声，飞落在那里</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sou_list_row">
+        <div class="defined_cut-off_rule"></div>
+      </div>
+    </div>
+    <!--黑色背景遮罩-->
+    <div class="allBlock"></div>
+    <!--版块设置弹框-->
+    <div class="templet_info">
+      <h3 class="tem_title sou_iconfont">&#xe631; 模块设置 <span class="sou_iconfont change_bkset">&#xe674;</span></h3>
+      <input type="hidden" value="" name="templet_list">
+      <div class="tem_info_box">
+        <div class="tem_list">
+          <h4>模块名称</h4>
+          <input type="text" name="tem_name" placeholder="版块名称不能为空，并不超过8个字！" maxlength="8" value="">
+        </div>
+        <div class="tem_list">
+          <h4>导航条</h4> 是否显示在导航条：
+          <input type="checkbox" name="inNav">
+        </div>
+        <div class="tem_list_btn">
+          <button class="copy_mod">复制模块</button>
+          <button class="delete_mod">删除模块</button>
+        </div>
+      </div>
+    </div>
+    <!--文章弹框-->
+    <div class="sou_listShade_box">
+      <h3 class="listShade_title sou_iconfont"> 文章列表 <span class="sou_iconfont close_image" onclick="listShade()"></span></h3>
+      <div>
+        <div class="listbox_list">
+          <label for="articleList">文章分类：</label>
+          <select name="articleList"></select>
+          <span class="articleAdd demoRight" sou_alt="添加文章分类"><a href="http://www.soudao.com/user/releasearticle.whtml" class="sou_iconfont" style="display: block;width: 100%;height: 100%;text-decoration: none;" target="_blank">&#xe6a5;</a></span>
+          <span class="sou_iconfont articleRefresh demoRight" sou_alt="刷新文章分类">&#xe60b;</span>
+        </div>
+        <div class="listbox_list">
+          <label for="articleNum">展示数量：</label>
+          <input type="text" name="articleNum" placeholder="数量（必填）">
+        </div>
+        <div class="listbox_list">
+          <label for="articleKeyword">关 键 词：</label>
+          <input type="text" name="articleKeyword" placeholder="关键词（选填）">
+        </div>
+        <div class="listbox_list">
+          <button type="button" class="save_articleThis">预览并保存</button>
+        </div>
+      </div>
+    </div>
+    <!--轮播图设置-->
+    <div class="slide_setbox" hidden>
+      <div class='sou_list_title'>
+        <span class='sou_iconfont'>&#xe66b;</span>背景
+      </div>
+      <div class="slide_list_box">
+        <div class="slide_draw">
+          <div class="slide_img">
+            <span class="sou_iconfont demoLeft" sou_alt="删除背景图?">&#xe6d3;</span>
+            <img src="" alt="">
+          </div>
+          <button>选择图片</button>
+          <select name="slideSelect">
+            <option value="cover">拉伸</option>
+            <option value="contain">填充</option>
+            <option value="tile">平铺</option>
+            <option value="center">居中</option>
+          </select>
+        </div>
+        <div></div>
+      </div>
+
+    </div>
+    <!--图片设置-->
+    <div class="imgBox_shadebox">
+      <h3 class="imgBox_shadeTitle sou_iconfont">&#xe631; 图片设置 <span class="sou_iconfont close_slide" onclick="imgBoxShade()">&#xe674;</span></h3>
+      <div class="imgBox_imgUrl">
+        <img src="/layout/img/2.jpg" alt="">
+        <div>
+          <a href="javascript:;" class="shade_a">编辑图片</a>
+          <a href="javascript:;" class="shade_b">上传图片</a>
+        </div>
+      </div>
+      <div class="imgBox_linkUrl">
+        <p>小提示：上传图像 - 建议图片尺寸比例保持一致！</p>
+        <span>
+          链接地址：<input type="text" placeholder="填写链接地址" name="imgBox_link"><br>
+        </span>
+        <span>
+          图片描述：<textarea name="imgBox_Miaoshu" cols="30" rows="10" placeholder="填写图片描述"></textarea>
+        </span>
+        <span>
+          
+        </span>
+      </div>
+      <div class="imgBox_shade_btn">
+        <button class="keep_imgBox">保存</button>
+      </div>
+    </div>
+    <!--图库-->
+    <div class="image_contbox">
+      <h3 class="image_title sou_iconfont">&#xe6a3; 图库 <span class="sou_iconfont close_image" onclick="image_contbox()">&#xe674;</span></h3>
+      <input type="hidden" value="0" name="sou_icont">
+      <div class="image_listbox">
+        <div class="listbox_left">
+          <div class="listbox_left_btnbox _panel-box">
+            <div class="left_btnbox_list active">
+              <p><span class="sou_iconfont">&#xe7b6;</span>上传图片</p>
+            </div>
+            <div class="left_btnbox_list sou_userImgbox_type">
+              <p><span class="sou_iconfont">&#xe622;</span>已上传图片</p>
+              <ul class="listbox_selectbox">
+                <li _kind="" class="active">
+                  <b>全部分组</b>
+                  <span class="sou_iconfont edit_fenzu"></span>
+                  <span class="sou_iconfont delete_fenzu"></span>
+                </li>
+
+                <li _kind="252058358879185331" class="">
+                  <b>小白白小白</b>
+                  <span class="sou_iconfont edit_fenzu"></span>
+                  <span class="sou_iconfont delete_fenzu"></span>
+                </li>
+                <div class="addFenzu">
+                  <span class="sou_iconfont"></span><b>添加分组</b>
+                </div>
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>纯色背景</p>
+              <ul _kind="33901"> 
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>自然风光</p>
+              <ul _kind="33902"> 
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>城市背景</p>
+              <ul _kind="33903">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>物体</p>
+              <ul _kind="33904">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>图标</p>
+              <ul _kind="33905">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>小清新</p>
+              <ul _kind="33906">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>医疗</p>
+              <ul _kind="33910">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>机械制造</p>
+              <ul _kind="33911">
+              </ul>
+            </div>
+            <div class="left_btnbox_list sou_imgbox_type">
+              <p><span class="sou_iconfont">&#xe61f;</span>活动促销</p>
+              <ul _kind="33912">
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="listbox_right">
+          <!--上传图片-->
+          <div class="listbox_input">
+            <form id="mydropzone" action="/html/fodderUpload.do" class="dropzone">
+            </form>
+          </div>
+          <!--已上传的图片-->
+          <div class="listbox_allimg">
+            <ul class="_panel-box">
+              <li>
+                <i style="background-image: url(http://static.isoudao.com/upload/fodder/339/33901/7v2mei.png)"></i>
+                <div>
+                  <span class="sou_iconfont editImgbox_list">&#xe690;</span>
+                  <span class="sou_iconfont deleUserImg">&#xe61b;</span>
+                  <span class="sou_iconfont setUserImg_list">&#xe631;</span>
+                </div>
+              </li>
+              <li>
+                <i style="background-image: url(http://static.isoudao.com/upload/fodder/339/33901/7v2mei.png)"></i>
+                <div>
+                  <span class="sou_iconfont editImgbox_list">&#xe690;</span>
+                  <span class="sou_iconfont deleUserImg">&#xe61b;</span>
+                  <span class="sou_iconfont setUserImg_list">&#xe631;</span>
+                </div>
+              </li>
+              <li>
+                <i style="background-image: url(http://static.isoudao.com/upload/fodder/339/33901/7v2mei.png)"></i>
+                <div>
+                  <span class="sou_iconfont editImgbox_list">&#xe690;</span>
+                  <span class="sou_iconfont deleUserImg">&#xe61b;</span>
+                  <span class="sou_iconfont setUserImg_list">&#xe631;</span>
+                </div>
+              </li>
+              <li>
+                <i style="background-image: url(http://static.isoudao.com/upload/fodder/339/33901/7v2mei.png)"></i>
+                <div>
+                  <span class="sou_iconfont editImgbox_list">&#xe690;</span>
+                  <span class="sou_iconfont deleUserImg">&#xe61b;</span>
+                  <span class="sou_iconfont setUserImg_list">&#xe631;</span>
+                </div>
+              </li>
+              <li>
+                <i style="background-image: url(http://static.isoudao.com/upload/fodder/339/33901/7v2mei.png)"></i>
+                <div>
+                  <span class="sou_iconfont editImgbox_list">&#xe690;</span>
+                  <span class="sou_iconfont deleUserImg">&#xe61b;</span>
+                  <span class="sou_iconfont setUserImg_list">&#xe631;</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!--搜到图库-->
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <!--医疗图库-->
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <!--机械制造-->
+          <div class="listbox_souimg">
+            <ul class="_panel-box">              </ul>
+          </div>
+          <!--活动促销-->
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div>
+          <div class="listbox_souimg">
+            <ul class="_panel-box"> 
+            </ul>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <!--主题设置-->
+    <div class="sou_themeSet">
+      <h3 class="sou_title sou_iconfont">&#xe68f; 主题设置 <span class="sou_iconfont " onclick="showTheme()">&#xe674;</span></h3>
+      <input type="hidden" value="" class="oldTheme">
+      <div class="themeSet_box">
+        <h3>当前主题：<span>默认主题</span></h3>
+        <ul>
+        </ul>
+        <h3>导航栏背景：</h3>
+        <div class="navBg_btn">
+          <div>
+            <button class="navBg_btn_color">背景色
+              <input type="color" value="#333">
+            </button>
+          </div>
+          <div>
+            <button class="navBg_btn_img">图片</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="navChekebox">
+        <div>
+          <input type="checkbox" name="navCheck">显示导航条
+          <p>访客在电脑和平板上可以跳转至不同版块</p>
+        </div>
+        <div>
+          <input type="checkbox" name="bottomCheck">显示网站页脚
+          <p>用于显示网站相关信息（如备案号）的文本框</p>
+        </div>
+      </div>
+      <div class="theme_btn">
+        <button class="add_themeSet">保存主题</button>
+      </div>
+    </div>
+    <!-- 美图秀秀版块-->
+    <div id="xiuxiu_Box">
+      <div id="altContent">
+
+      </div>
+    </div>
+    <!--元素遮罩按钮-->
+    <div id="navBox_shade">
+      <p class="navBox_shade_btn">编辑导航</p>
+    </div>
+    <div id="linkBox_shade">
+      <p class="linkBox_shade_btn">编辑友链</p>
+    </div>
+    <div id="imgBox_shade">
+      <p class="imgBox_shade_btn">编辑</p>
+    </div>
+    <div id="BtnBox_shade">
+      <p class="btn_shade_btn">编辑</p>
+    </div>
+    <div id="listBox_shade">
+      <p class="list_shade_btn">编辑</p>
+    </div>
+    <!--按钮设置-->
+    <div class="btn_setBox">
+      <h3 class="sou_title sou_iconfont">&#xe631; 主题设置 <span class="sou_iconfont" onclick="showBtnSet()">&#xe674;</span></h3>
+      <div class="btn_setBox_list">
+        <div>
+          <h3>按钮名称</h3>
+          <input type="text" name="btnName" placeholder="请填写按钮名称">
+        </div>
+        <div>
+          <h3>按钮链接</h3>
+          <input type="text" name="btnLink" placeholder="请填写链接地址">
+        </div>
+        <div>
+          <button type="button" class="btn_setRemove">移除</button>
+          <button type="button" class="btn_setAdd">保存</button>
+        </div>
+      </div>
+    </div>
+    <!--版块设置-->
+    <div class="sou_module_set" style="display: none">
+      <!--保存版块按钮-->
+      <div class="module_keep sou_iconfont demoDown" sou_alt="保存版块">
+        &#xe684;
+      </div>
+      <!--轮播图设置-->
+      <div class="slide_set">
+        <div class='sou_list_title'>
+          <span class='sou_iconfont'>&#xe66b;</span>滑块
+        </div>
+        <div class='slide_list_box'>
+          <ul class='slide_imglist'>
+          </ul>
+          <a href='javascript:;' class='add_slide_list'>添加滑块</a>
+        </div>
+      </div>
+      <!--背景设置-->
+      <div class="bg_set">
+        <div class='sou_list_title'>
+          <span class='sou_iconfont'>&#xe66b;</span>背景设置
+        </div>
+        <div class="bg_list_box">
+          <ul class="bg_list_li">
+          </ul>
+          <div class="bg_draw">
+            <div class="bg_img">
+              <span class="sou_iconfont demoLeft" sou_alt="删除背景图?">&#xe6d3;</span>
+              <img src="" alt="">
+            </div>
+            <button>选择图片</button>
+            <select name="bgSelect" id="bgSelect">
+              <option value="cover">拉伸</option>
+              <option value="contain">填充</option>
+              <option value="tile">平铺</option>
+              <option value="center">居中</option>
+            </select>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <!--布局设置-->
+      <div class="layout_set">
+        <div class='sou_list_title'>
+          <span class='sou_iconfont'>&#xe66b;</span>布局设置
+        </div>
+        <div class="layout_list_box">
+          <div class="layout_list_1btn">
+            <button class="layout_list_abeamBtn">横向布局</button>
+            <button class="layout_list_endwiseBtn">纵向布局</button>
+            <button class="layout_list_bigImgBtn">大尺寸图</button>
+          </div>
+          <div class="layout_list_2btn">
+            <button class="layout_list_01">1</button>
+            <button class="layout_list_02">2</button>
+            <button class="layout_list_03">3</button>
+            <button class="layout_list_04">4</button>
+          </div>
+          <div class="layout_list_3btn">
+            <button class="layout_list_01">图片居左</button>
+            <button class="layout_list_02">图片居右</button>
+            <button class="layout_list_03">左右交替</button>
+          </div>
+        </div>
+      </div>
+      <!--自定义布局设置-->
+      <div class="defined_layout_set">
+        <div class='sou_list_title'>
+          <span class='sou_iconfont'>&#xe66b;</span>自定义布局
+        </div>
+        <div class="defined_list_box">
+          <div class="defined_list_1btn">
+            <button numb="1">单块布局</button>
+            <button numb="2">1:1布局</button>
+            <button numb="3">1:1:1布局</button>
+            <button numb="4">1:2布局</button>
+            <button numb="5">2:1布局</button>
+          </div>
+        </div>
+      </div>
+      <!--区块网格布局-->
+      <div class="reseau_set">
+        <div class='sou_list_title'>
+          <span class='sou_iconfont'>&#xe66b;</span>区块布局
+        </div>
+        <div class="reseau_list_box">
+          <div class="reseau_1btn">
+            <button class="reseau_custom">自定义</button>
+            <button class="reseau_fixed active">固定排版</button>
+          </div>
+          <div class="reseau_2btn">
+            <div class="reseau_x_y">
+              <div>
+                <label for="reseau_x">X轴:</label>
+                <select name="reseau_x" id="reseau_x">
+                  <option value="1">1</option>
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div>
+                <label for="reseau_y">Y轴:</label>
+                <select name="reseau_y" id="reseau_y">
+                  <option value="1">1</option>
+                  <option value="2" selected="selected">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+            <div class="reseau_compose">
+              <span class="sou_iconfont active">&#xe6a2;</span>
+              <span class="sou_iconfont">&#xe6a1;</span>
+              <span class="sou_iconfont">&#xe6a0;</span>
+              <span class="sou_iconfont">&#xe69f;</span>
+            </div>
+          </div>
+          <div class="reseau_3btn">
+            <div>
+              <label for="reseau_space">间距:</label>
+              <select name="reseau_space" id="reseau_space">
+                <option value="0">无</option>
+                <option value="1" selected="selected">小</option>
+                <option value="2">大</option>
+              </select>
+            </div>
+            <div>
+              <label for="reseau_hei">高度:</label>
+              <select name="reseau_hei" id="reseau_hei">
+                <option value="0">小</option>
+                <option value="1">中</option>
+                <option value="2">大</option>
+              </select>
+            </div>
+            <div>
+              <label for="reseau_width">布局宽度:</label>
+              <select name="reseau_width" id="reseau_width">
+                <option value="0">版心</option>
+                <option value="1">全屏</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="module_zhuan sou_iconfont ">
+        <span class="module_quan demoDown" sou_alt="设为后台版块">&#xe6a7;</span>
+        <span class="module_putong demoDown" sou_alt="设为普通版块">&#xe6a6;</span>
+      </div>
+    </div>
+    <div class="sou_list_editor_box" style="display: none">
+      <div class="sou_list_moveBtn sou_iconfont demoLeft" sou_alt="排序请拖动">&#xe694;</div>
+      <div class="sou_list_deletBtn sou_iconfont demoLeft" sou_alt="确定删除？">&#xe6d3;</div>
+      <p class="sou_list_shade"><span class="imgBox_shade_btn" style="display: none;">编辑</span><span class="btn_shade_btn" style="display: none;">编辑</span></p>
+    </div>
+    <div class="sou_list_sortable_addBtnBox" style="display: none;">
+      <div class="sou_list_sortable_addBotton">添加项目</div>
+    </div>
+    <div class="map_set" style="display: none;">
+      <button type="button" class="map_refresh">编辑</button>
+      <div class="map_inputbox">
+        <span class="sou_iconfont">&#xe695;</span>
+        <input type="text" name="map_input">
+        <button type="button" class="map_button">更新</button>
+        <span class="sou_close_map sou_iconfont">&#xe6d3;</span>
+      </div>
+      <div class="video_inputbox" linkNum="1">
+        <div>
+          视频通用码：
+          <input type="radio" name="link" checked value="1"> 视频地址：
+          <input type="radio" name="link" value="2">
+          <p class="video_close_map sou_iconfont">&#xe6d3;</p>
+        </div>
+        <div class="inputbox_1">
+          <textarea type="text" name="video_input" placeholder="把视频通用代码复制到框中即可使用"></textarea>
+        </div>
+        <div class="inputbox_2">
+          <input type="text" name="viedeo_mp4" placeholder="把视频mp4格式地址复制到框中即可使用">
+          <input type="text" name="viedeo_ogg" placeholder="把视频ogg格式地址复制到框中即可使用">
+        </div>
+        <button type="button" class="video_button">更新</button>
+        视频通用码：<a href="http://www.soudao.com/help/details/Uz6ZJf.html" target="_blank">什么是视频通用码？</a>
+      </div>
+    </div>
+    <!--视频组件-->
+    <div class="sou_list_innerBg_btn" style="display: none;">
+      <div class='title'>区块背景</div>
+      <div class="list_innerBg_box">
+        <div>
+          <button class="innerBg_newImg">上传图片</button>
+          <button class="innerBg_editImg">编辑图片</button>
+        </div>
+        <label>
+          <input type="checkbox" name="isShade">遮罩
+        </label>
+      </div>
+    </div>
+    <!--区块背景按钮-->
+    <!-- 保存版块设置-->
+    <div class="keepModule_info">
+      <h3 class="keepModule_title sou_iconfont">&#xe631; 保存我的模块 <span class="sou_iconfont change_userbkset" onclick="keepModule_show()">&#xe674;</span></h3>
+      <div class="keepModule_info_box">
+        <div class="keepModule_list">
+          <h4>模块名称</h4>
+          <input type="text" name="keepModule_name" placeholder="版块名称不能为空，并不超过8个字！" maxlength="8" value="">
+        </div>
+        <div class="keepModule_list">
+          <h4>模块描述</h4>
+          <textarea name="keepModule_caption" id="keepModule_caption" cols="30" rows="10"></textarea>
+        </div>
+        <div class="keepModule_list_btn">
+          <button class="keepModule">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--提示浏览器版本-->
+  <div class="support">
+    <div class="support-contain">
+      <div class="imgie">
+        <img class="mt20" src="layout/img/html5.png">
+      </div>
+      <h3 class="h3ie">尊敬的搜到网用户：</h3>
+      <p><span>为了保证您在搜到网内的使用体验，建议您使用谷歌浏览器进行访问。若坚持使用该浏览器，请</span> <a class="text-primary" href="javascript:;"><span>继续使用</span></a></p>
+      <div class="imgGoogle">
+        <a href="https://www.baidu.com/s?wd=google%E6%B5%8F%E8%A7%88%E5%99%A8" target="_blank">
+          <img src="layout/img/google.png" alt=""><span>下载</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--详情页版块设置-->
+  <div class="editAddType">
+    <button type="button">设置标题</button>
+    <button type="button">设置作者</button>
+    <button type="button">设置时间</button>
+    <button type="button">设置副标题</button>
+    <button type="button">设置内容</button>
+  </div>
+  <!--导航设置版块-->
+  <div class="navBoxStyle">
+    <h4>导航设置 <span class="sou_iconfont closeNavBox">&#xe674;</span></h4>
+    <div class="styleBox">
+      <div class="style1">
+        <span><input type="radio" name="navType" id="navType0" value="0" checked> <label for="navType0">自动导航</label></span>
+        <span><input type="radio" name="navType" id="navType1" value="1"> <label for="navType1">自定义导航</label> </span>
+      </div>
+      <div class="addNavList">
+        <span class="addNavListBg"></span>
+        <h5>导航列表 <span class="sou_iconfont addNavBtn">&#xe6a5;添加菜单项</span></h5>
+        <ul id="dragNav-list">
+
+        </ul>
+      </div>
+    </div>
+    <div class="navStyleList">
+      <h5>编辑链接</h5>
+      <div class="list">
+        <div>
+          <label for="navName">导航名称<i>*</i></label>
+          <input type="text" id="navName" name="navName" value="新导航">
+        </div>
+        <div>
+          <label for="navType">链接方式</label>
+          <select name="navType" id="navType">
+            <option value="0">锚点</option>
+            <option value="1">内链</option>
+            <option value="2">自定义</option>
+          </select>
+        </div>
+        <div>
+          <label for="navMaodian">链接地址</label>
+          <select name="navMaodian" id="navMaodian">
+          </select>
+          <select name="navLink" id="navLink" hidden>
+          </select>
+          <input type="text" name="navLinkZdy" id="navLinkZdy" placeholder="输入正确的链接地址" hidden>
+        </div>
+        <div>
+          <label for="navOpen">打开方式</label>
+          <select name="navOpen" id="navOpen">
+            <option value="">当前窗口打开</option>
+            <option value="_blank">新窗口打开</option>
+          </select>
+        </div>
+        <div class="addNavBtnbox">
+          <button type="button" class="addNavBtn">确定</button>
+          <button type="button" class="closeAddNav">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //用户ID
+    var userId = "";
+    //版本号
+    var version = 'v2.0';
+    //编辑器ID
+    var editorId = "${editor.id}";
+    //用户图库类型   
+    var uks = '';
+    // 页面id
+    var pageId = "111";
+    // 模板id
+    var templateId = '';
+    // 预览地址
+    var linkurl = "";
+    //siteId 编辑器id
+    var siteId = '350414292682832260';
+    //域名
+    var UPPATH = "http://";
+    var CPATH = "http://";
+    var STATICHOST = "soudao.com";
+    var AJAXHOST = "baidu.com";
+    var FILEPATH = "$soudao.com";
+    //登陆用地址
+    var soudaoDomain = "http://www.soudao.com";
+    // 扩展名
+    var EXT = "${ext}";
+    //图库分类
+    var categoryId = '339';
+    //内部方法使用
+    var ckeObj, thisObj, img_this, article_this, slide_thisObj, set_imgUrl, imgbox_obj, btn_this, onfocus_this;
+    //富文本  当前模块设置添加对象   图片编辑对象  轮播图编辑对象  图片回显对象
+    //个人模块
+    var thisConfig = {
+      modBK: [{
+        id:"module_2",
+        isList: false,
+        isNav: true,
+        isSlide: false,
+        isbg: 1,
+        isid: "354494117390904710",
+        islayout: 1,
+        moduleType: 7,
+        navname: "分页列表页",
+        type: 0}
+      ],
+      thisTheme: {},
+      service: {
+        serType: 0,
+        serJson: ''
+      },
+      navFooter: {
+        nav: {
+          type: 30001,
+          moduleType: 1,
+          isbg: !1,
+          isSlide: !1,
+          showStyle: 0,
+          navlist: [{
+            name: '默认导航',
+            type: 1,
+            link: '#',
+            target: ''
+          }]
+        },
+        footer: {
+          type: 30002,
+          moduleType: 1,
+          isbg: !1,
+          isSlide: !1
+        }
+      }
+    };
+
+    //版块配置
+    var modBK = thisConfig.modBK.length > 0 ? thisConfig.modBK : [];
+    //主题配置
+    var thisTheme = thisConfig.thisTheme.length > 0 ? thisConfig.thisTheme : {
+      themeNmae: '默认',
+      themeClass: 'allInitial',
+      themeTypebox: ['bg_color_white', 'bg_color_gray', 'bg_color_hui'],
+      themeNav: "allNav-white"
+    };
+    //自动保存
+    var thisTime = !0;
+    //导航底部配置
+    var navFooter = thisConfig.navFooter;
+    //个人收藏组件
+    var userModulebox = [],
+      modulebox = [],
+      modules = [];
+    //客服模块
+    var serviceBox = thisConfig.service != undefined ? thisConfig.service : {
+      serType: 0,
+      serJson: ''
+    };
+    $(function() {
+      //客服回显
+      serviceIn();
+      //初始化主题
+      chushiTheme();
+      themeRen();
+      //本地储存
+      localstrang();
+      //上传图片
+      $("#mydropzone").dropzone({
+        url: "/EU/upload/userImgFile.do?siteId=" + siteId + "&type=0",
+        paramName: "upload",
+        addRemoveLinks: true,
+        maxFilesize: 2,
+        parallelUploads: 1,
+        dictDefaultMessage: '拖动文件至此或者点击上传',
+        dictMaxFilesExceeded: "您最多只能上传1个文件！",
+        acceptedFiles: ".jpg,.gif,.png,.jpeg",
+        dictResponseError: '文件上传失败!',
+        dictInvalidFileType: "文件类型只能是*.jpg,*.gif,*.png,*.jpeg。",
+        dictFallbackMessage: "浏览器不受支持",
+        dictFileTooBig: "文件过大上传文件最大支持.",
+        dictRemoveLinks: "删除",
+        dictCancelUpload: "取消",
+        init: function() {
+          this.on("addedfile", function(file) {
+            //上传文件时触发的事件
+            console.log(file);
+          });
+          this.on("success", function(file, data) {
+            //上传成功触发的事件
+            if (data.metaInfo.code == 0) {
+              var sou_iconts = $(".image_contbox input[name=sou_icont]").val();
+              imgEcho(sou_iconts, "http://editor.easyh5.net/upload" + data.data.filePath);
+              image_contbox(0);
+              userKind(1, '', 1);
+            } else {
+              layer.msg(data.metaInfo.message);
+            }
+          });
+          this.on("error", function(file, data) {
+            //上传失败触发的事件
+            var message = '';
+            //lavarel框架有一个表单验证，
+            //对于ajax请求，JSON 响应会发送一个 422 HTTP 状态码，
+            //对应file.accepted的值是false，在这里捕捉表单验证的错误提示
+            if (file.accepted) {
+              $.each(data, function(key, val) {
+                  message = message + val[0] + ';';
+                })
+                //控制器层面的错误提示，file.accepted = true的时候；
+              alert(message);
+            }
+          });
+          this.on("removedfile", function(file) {
+            //删除文件时触发的方法
+            var file_id = angular.element(appElement).scope().file_id;
+            if (file_id) {
+              $.post('/admin/del/' + file_id, {
+                '_method': 'DELETE'
+              }, function(data) {
+                console.log('删除结果:' + data.message);
+              })
+            }
+            angular.element(appElement).scope().file_id = 0;
+            document.querySelector('.dropzone.dz-started .dz-message').style.display = 'block';
+          });
+        }
+      });
+      //修改编辑单页添加按钮
+      echoSetUp();
+    })
+  </script>
+  <script type="text/javascript" src="layout/js/common.js"></script>
+  <script type="text/javascript" src="layout/js/siteAjax.js"></script>
+  <script type="text/javascript" src="layout/js/topModule.js"></script>
+  <script type="text/javascript" src="/E/modules.json?editorId=1001"></script>
+  <script type="text/javascript" src="layout/js/module.js"></script>
+  <script type="text/javascript" src="layout/js/souedit-1.0.js"></script>
+  <script type="text/javascript" src="layout/js/guide.js"></script>
+</body>
+
+</html>

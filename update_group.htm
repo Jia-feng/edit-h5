@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>用户中心</title>
+	<meta name="description" content="描述" />
+	<meta name="keywords" content="关键词" />
+	<!--引用样式-->
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/layout/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/layout/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/layout/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/layout/css/public.css" />
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/layout/css/update.css" />
+	<script type="text/javascript" src="http://static.isoudao.com/layout/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://static.isoudao.com/layout/js/home.js"></script>
+	<script type="text/javascript" src="http://static.isoudao.com/layout/js/layer/layer.js"></script>
+	<script src="http://static.isoudao.com/static/js/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://static.isoudao.com/static/css/paging.css" />
+	<script>
+		var UPPATH = "http://static.isoudao.com/upload/userPhoto/";
+		var CPATH = "http://static.isoudao.com";
+		var FILEPATH = "http://static.isoudao.com/upload";
+	</script>
+	<style type="text/css">
+		html,body {
+			height:100%;
+		}
+		.update {
+			height:100%;
+			overflow:hidden;
+		}
+		.update-box {
+			width:300px;
+			margin:34px auto 0;
+		}
+		.update-select {
+			width:200px;
+			margin-left:9px;
+		}
+		.update-btn {
+			margin-top:20px;
+			width:290px;
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+<div class="update">
+	<div class="update-box">
+		<form action="" method="post" id="myform">
+			<ul>
+				<li>
+					<span class="public-input-text">营销页分组</span>
+					<select name="cid" class="public-select update-select" id="groupId">
+						<option value="">--请选择--</option>
+						<#list list as gl>
+							<option value="${gl.id!''}" <#if gid??><#if gid == gl.id>selected="selected"</#if></#if>>${gl.caption!''}</option>
+						</#list>
+					</select>
+				</li>
+				<li style="text-align: center;">
+					<input name="id" value="${id}" type="hidden"/>
+					<input name="siteId" value="" type="hidden"/>
+					<input type="button" class="public-input-btn update-btn" value="设置" id = "tijiao"/>
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>
+	<script>
+		//获取url参数
+		function getQueryVariable(variable)
+		{
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+			for (var i=0;i<vars.length;i++) {
+				var pair = vars[i].split("=");
+				if(pair[0] == variable){return pair[1];}
+			}
+			return(false);
+		}
+		$("input[name=siteId]").val(getQueryVariable('siteId'));
+		$(document).ready(function(){
+			$('#tijiao').click(function () {
+				$.ajax({
+					type: "POST",
+					url:"/EU/fodder/categroy/list.json",
+					data:$('#myform').serializeArray(),
+					async: false,
+					error: function(request) {
+						layer.msg("提交失败！");
+						$("#tijiao").attr('k',"0");
+					},
+					success: function(data) {
+						if(data.metaInfo.code == 0){
+							layer.msg("设置成功");
+							parent.layer.closeAll();
+						}else{
+							layer.msg("提交失败！");
+							$("#tijiao").attr('k',"0");
+						}
+					}
+				});
+			});
+		});
+	</script>
+	</body>
+</html>

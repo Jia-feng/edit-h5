@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport">
+  <title>搜到编辑器</title>
+  <link rel="stylesheet" href="layout/css/reset.css">
+  <link rel="stylesheet" href="layout/js/tip/just-tip.css">
+  <link rel="stylesheet" href="layout/css/souEdit-1.0.css">
+  <script type="text/javascript" src="layout/js/jquery.min.js"></script>
+  <script type="text/javascript" src="layout/js/tip/justTools.js"></script>
+</head>
+
+<body>
+  <div class="sou-demo-bar">
+    <div class="header">
+      <div class="logo_left">
+        <img src="layout/img/logo.png" alt="">网站预览
+      </div>
+      <div class="btn_right">
+        <ul>
+          <li class="preview_pc demoDown" sou_alt="在电脑上预览">
+            <a href="javascript:;">预览<span class="sou_iconfont">&#xe670;</span></a>
+          </li>
+          <li class="preview_pb demoDown" sou_alt="在平板上预览">
+            <a href="javascript:;"><span class="sou_iconfont">&#xe693;</span></a>
+          </li>
+          <li class="preview_phone demoDown" sou_alt="在手机上预览">
+            <a href="javascript:;"><span class="sou_iconfont">&#xe66e;</span></a>
+          </li>
+          <li class="preview_renovate demoDown" sou_alt="刷新查看效果">
+            <a href="javascript:;"><span class="sou_iconfont">&#xe60b;</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="sou-demo-cont">
+    <iframe src="iframe.html" frameborder="0"></iframe>
+    <img src="layout/img/ipad.png" alt="" class="ipadBg">
+    <img src="layout/img/phoneBg.png" alt="" class="phoneBg">
+  </div>
+  <script>
+    function resizePc() {
+      var vheight = $(window).height(); //浏览器body 高度
+      var vwidth = $(window).width(); //浏览器body 宽度
+      $(".sou-demo-cont").css("height", vheight - 55 + "px");
+    };
+    $(function() {
+      //提示显示语
+      $("body").on("mouseover", ".demoDown", function() {
+        var _this = $(this);
+        _this.justToolsTip({
+          animation: "moveInBottom",
+          //width:"300px",
+          contents: _this.attr("sou_alt"),
+          gravity: 'bottom'
+        });
+      });
+      resizePc();
+      $(".preview_pc").click(function() {
+        $(".sou-demo-cont iframe").css({
+          width: "100%",
+          height: "100%",
+          top: "0px",
+          left: "0px",
+          margin: "0px",
+        });
+        $(".ipadBg").hide();
+        $(".phoneBg").hide();
+        resizePc();
+      });
+      $(".preview_pb").click(function() {
+        $(".sou-demo-cont iframe").css({
+          width: "770px",
+          height: "993px",
+          marginLeft: "-384px",
+          top: "115px",
+          left: "50%"
+        });
+        $(".ipadBg").show();
+      });
+      $(".preview_phone").click(function() {
+        $(".sou-demo-cont iframe").css({
+          width: "375px",
+          height: "667px",
+          marginLeft: "-187.5px",
+          top: "115px",
+          left: "50%"
+        });
+        $(".ipadBg").hide();
+        $(".phoneBg").show();
+      });
+      $(".preview_renovate").click(function() {
+        $("iframe").attr("src", "iframe.html");
+      });
+    });
+
+  </script>
+</body>
+
+</html>
+ 

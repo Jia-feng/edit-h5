@@ -1,0 +1,33 @@
+var themeBox = [
+  {
+    themeNmae:"默认",
+    themeClass:"allInitial",
+    themeTypebox:['bg_color_white','bg_color_gray','bg_color_hui'],
+    themeNav:"allNav-white"
+  },
+  {
+    themeNmae:'杏黄',
+    themeClass:'allApricot',
+    themeTypebox:['bg_color_white','bg_color_gray','bg_color_yellow'],
+      themeNav:"allNav-Apricot"
+  },
+ {
+    themeNmae:'玫红',
+    themeClass:'allRoseo',
+    themeTypebox:['bg_color_white','bg_color_gray','bg_color_roseo'],
+     themeNav:"allNav-Roseo"
+  },
+  {
+    themeNmae:'石青',
+    themeClass:'allAzurite',
+    themeTypebox:['bg_color_white','bg_color_blackishGreen','bg_color_azurite'],
+      themeNav:"allNav-Azurite"
+  },
+  {
+      themeNmae:'红色',
+      themeClass:'allRed',
+      themeTypebox:['bg_color_white','bg_color_hui','bg_color_red'],
+      themeNav:"allNav-Red"
+  }
+
+];

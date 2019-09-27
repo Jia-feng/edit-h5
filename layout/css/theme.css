@@ -1,0 +1,275 @@
+.bg_color_white {
+  background: #FFF;
+  color: #333;
+}
+.bg_color_white a {
+  color: #333;
+}
+.bg_color_gray {
+  background: #ecf0f1;
+  color: #333;
+}
+.bg_color_gray a {
+  color: #333;
+}
+.bg_color_dullGrey {
+  background: #212c37;
+  color: #FFF!important;
+}
+.bg_color_dullGrey a {
+  color: #fff!important;
+}
+.bg_color_dullGrey .h1,
+.bg_color_dullGrey .h2,
+.bg_color_dullGrey .h3,
+.bg_color_dullGrey .h4,
+.bg_color_dullGrey .h6,
+.bg_color_dullGrey h1,
+.bg_color_dullGrey h2,
+.bg_color_dullGrey h3,
+.bg_color_dullGrey h4,
+.bg_color_dullGrey h6,
+.bg_color_dullGrey span {
+  color: #fff;
+}
+.bg_color_dullGrey .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF!important;
+}
+.bg_color_hui {
+  background: #cccccc;
+  color: #FFF;
+}
+.bg_color_hui a {
+  color: #FFF;
+}
+.bg_color_hui .h1,
+.bg_color_hui .h2,
+.bg_color_hui .h3,
+.bg_color_hui .h4,
+.bg_color_hui .h6,
+.bg_color_hui h1,
+.bg_color_hui h2,
+.bg_color_hui h3,
+.bg_color_hui h4,
+.bg_color_hui h6,
+.bg_color_hui span {
+  color: #fff;
+}
+.bg_color_hui .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF!important;
+}
+.bg_color_yellow {
+  background: #fdfaeb;
+  color: #333;
+}
+.bg_color_yellow a {
+  color: #333;
+}
+.bg_color_roseo {
+  background: #7c3b52;
+  color: #FFF;
+}
+.bg_color_roseo a {
+  color: #FFF;
+}
+.bg_color_roseo .h1,
+.bg_color_roseo .h2,
+.bg_color_roseo .h3,
+.bg_color_roseo .h4,
+.bg_color_roseo .h6,
+.bg_color_roseo h1,
+.bg_color_roseo h2,
+.bg_color_roseo h3,
+.bg_color_roseo h4,
+.bg_color_roseo h6,
+.bg_color_roseo span {
+  color: #fff;
+}
+.bg_color_roseo .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF;
+}
+.bg_color_blackishGreen {
+  background: #05997f;
+  color: #FFF;
+}
+.bg_color_blackishGreen a {
+  color: #FFF;
+}
+.bg_color_blackishGreen .h1,
+.bg_color_blackishGreen .h2,
+.bg_color_blackishGreen .h3,
+.bg_color_blackishGreen .h4,
+.bg_color_blackishGreen .h6,
+.bg_color_blackishGreen h1,
+.bg_color_blackishGreen h2,
+.bg_color_blackishGreen h3,
+.bg_color_blackishGreen h4,
+.bg_color_blackishGreen h6,
+.bg_color_blackishGreen span {
+  color: #fff;
+}
+.bg_color_blackishGreen .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF!important;
+}
+.bg_color_azurite {
+  background: #0dc5b9;
+  color: #FFF;
+}
+.bg_color_azurite a {
+  color: #FFF;
+}
+.bg_color_azurite .h1,
+.bg_color_azurite .h2,
+.bg_color_azurite .h3,
+.bg_color_azurite .h4,
+.bg_color_azurite .h6,
+.bg_color_azurite h1,
+.bg_color_azurite h2,
+.bg_color_azurite h3,
+.bg_color_azurite h4,
+.bg_color_azurite h6,
+.bg_color_azurite span {
+  color: #fff;
+}
+.bg_color_azurite .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF!important;
+}
+.bg_color_red {
+  background: #e40613!important;
+  color: #FFF;
+}
+.bg_color_red a {
+  color: #FFF;
+}
+.bg_color_red .h1,
+.bg_color_red .h2,
+.bg_color_red .h3,
+.bg_color_red .h4,
+.bg_color_red .h6,
+.bg_color_red h1,
+.bg_color_red h2,
+.bg_color_red h3,
+.bg_color_red h4,
+.bg_color_red h6,
+.bg_color_red span {
+  color: #fff;
+}
+.bg_color_red .ontext_edit:hover {
+  box-shadow: 0px 0px 1px #FFF!important;
+}
+.allInitial button {
+  background: #ecf0f1!important;
+}
+.allInitial h1 {
+  color: #333!important;
+}
+.allInitial h2 {
+  color: #333!important;
+}
+.allInitial h3 {
+  color: #333!important;
+}
+.allApricot button {
+  background: #f1a852!important;
+}
+.allApricot h1 {
+  color: #FFF!important;
+}
+.allApricot h2 {
+  color: #FFF!important;
+}
+.allApricot h3 {
+  color: #999!important;
+}
+.allRoseo button {
+  background: #be4488;
+}
+.allRoseo h1 {
+  color: #FFF!important;
+}
+.allRoseo h2 {
+  color: #FFF!important;
+}
+.allRoseo h3 {
+  color: #999!important;
+}
+.allAzurite button {
+  background: #0dc5b9;
+}
+.allAzurite h1 {
+  color: #FFF!important;
+}
+.allAzurite h2 {
+  color: #FFF!important;
+}
+.allAzurite h3 {
+  color: #999!important;
+}
+.allRed button {
+  background: #e40613;
+}
+.allRed h1 {
+  color: #FFF!important;
+}
+.allRed h2 {
+  color: #FFF!important;
+}
+.allRed h3 {
+  color: #999!important;
+}
+.allNav-white > div {
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFF!important;
+}
+.allNav-white > div ul li a {
+  color: #FFF!important;
+}
+.allNav-white > div ul li:hover a {
+  color: #FFF!important;
+}
+.allNav-Apricot > div {
+  background: rgba(241, 168, 82, 0.85);
+  color: #FFF!important;
+}
+.allNav-Apricot > div ul li a {
+  color: #FFF!important;
+}
+.allNav-Apricot > div ul li:hover a {
+  color: #000!important;
+}
+.allNav-Roseo > div {
+  background: rgba(190, 68, 136, 0.85);
+  color: #FFF!important;
+}
+.allNav-Roseo > div ul li a {
+  color: #FFF!important;
+}
+.allNav-Roseo > div ul li:hover a {
+  color: #be4488!important;
+}
+.allNav-Azurite > div {
+  background: rgba(13, 197, 185, 0.85);
+  color: #FFF!important;
+}
+.allNav-Azurite > div ul li a {
+  color: #FFF!important;
+}
+.allNav-Azurite > div ul li:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+.allNav-Azurite > div ul li:hover a {
+  color: #0dc5b9!important;
+}
+.allNav-Red > div {
+  background: rgba(228, 6, 19, 0.7);
+  color: #FFF!important;
+}
+.allNav-Red > div ul li a {
+  color: #FFF!important;
+}
+.allNav-Red > div ul li:hover {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+.allNav-Red > div ul li:hover a {
+  color: #e40613!important;
+}

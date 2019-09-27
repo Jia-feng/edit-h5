@@ -1,0 +1,18 @@
+﻿1、查询用户素材分组
+http://h5.soudao.com/userFodder/categroy/list.json 
+参数：page、pageSize
+返回值：count、page、pageCount、pageSize、list
+list 值 caption 、id
+2、添加素材分组
+http://h5.soudao.com/userFodder/categroy/add.do
+参数：caption 分组名称
+3、修改分组
+http://h5.soudao.com/userFodder/categroy/update.do
+参数： id、caption
+4、删除分组
+http://h5.soudao.com/userFodder/categroy/del.do
+参数：id
+5、设置素材分组
+http://h5.soudao.com/userFodder/updateUserKind.do
+参数：cid(分组) id(素材Id)
+
